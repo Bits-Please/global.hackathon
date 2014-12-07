@@ -7,14 +7,15 @@
         } catch(e) {
             var recognition = Object;
         }
+        data_Hash = new HashData({1:"dog"});
         recognition.continuous = true;
         recognition.interimResults = true;
-
+        var currPic = 0; //@TODO: generate random number here for a random animal
         var interimResult = '';
         var textArea = $('#speech-page-content');
         var textAreaID = 'speech-page-content';
 
-        $('.dog-mic').click(function(){
+        $(eval('.' + data_Hash.getText(currPic) +'-mic')).click(function(){  //data_Hash is the object created form the Hasmap class
             startRecognition();
         });
 
