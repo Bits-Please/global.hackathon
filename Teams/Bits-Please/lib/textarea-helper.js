@@ -1,3 +1,4 @@
+
 (function($) {
 
     insertAtCaret = function(areaId,text) {
