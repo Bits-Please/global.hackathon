@@ -2,6 +2,7 @@
 
     $(document).ready(function() {
 
+
         try {
             var recognition = new webkitSpeechRecognition();
         } catch(e) {
@@ -11,19 +12,20 @@
         recognition.interimResults = true;
 
         var interimResult = '';
-        var textArea = $('#speech-page-content');
-        var textAreaID = 'speech-page-content';
+        
+        $('.instructions').click(function(){
+            sweetAlert("Instructions","1. Click on the image\n2. Say what the image is");
+        });
+
 
         $('.dog-mic').click(function(){
             startRecognition();
         });
 
-       /* $('.dog-mic').click(function(){
-            recognition.stop();
-        });*/
+   
 
         var startRecognition = function() {
-            textArea.focus();
+     
             recognition.start();
         };
 
@@ -34,19 +36,22 @@
         if (event.results[i].isFinal) {
             
           if(event.results[i][0].transcript == "dog" || event.results[i][0].transcript == "dog " || event.results[i][0].transcript == " dog"){
-                insertAtCaret(textAreaID, "  CORRECT ");
                
-           }else{
-               insertAtCaret(textAreaID, "  FALSE ");
+                sweetAlert("Good job!", "That was correct", "success");
+                }else{
+               
+              
+                sweetAlert("Oops!", "That was wrong", "error");
                  var msg = new SpeechSynthesisUtterance('dog');
+                
                  window.speechSynthesis.speak(msg);
+              
+               
            }
         }
     }
 };
 
-        recognition.onend = function() {
-            /*$('.speech-content-mic').removeClass('speech-mic-works').addClass('speech-mic');*/
-        };
+       
     });
 })(jQuery);

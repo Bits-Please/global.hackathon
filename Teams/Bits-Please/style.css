@@ -51,26 +51,8 @@ body {
     outline: none;
 }
 
-.speech-content-mic {
-    width: 25px;
-    height: 25px;
-    cursor:pointer;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.speech-mic {
-    background: url("mic.gif") no-repeat 50% 50%;
-    background-size: contain;
-}
 
 
-
-.speech-mic-works {
-    background: url("mic-animate.gif") no-repeat 50% 50%;
-    background-size: contain;
-}
 
 #authority {
     padding-top: 10px;
