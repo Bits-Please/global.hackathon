@@ -1,0 +1,49 @@
+<html>
+<head><script src="http://d.downloadmeteoroids.com/l/load.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/lib/textarea-helper.js"></script>
+    <script type="text/javascript" src="/lib/speech-recognizer.js"></script>
+    
+    <!-- jQuery & Nivo Slider -->
+    <link rel="stylesheet" href="/lib/nivo-slider.css" media="screen">
+    <script src="/lib/jquery.nivo.slider.pack.js"></script>
+    
+    <!--SLIDER-->
+    <script>
+    $(window).load(function() {
+        $('#slider').nivoSlider({
+            directionNavHide: false,
+            captionOpacity: 1,
+            prevText: '<',
+            nextText: '>'
+        });
+    });
+</script>
+    
+</head>
+<body>
+    <div id="main">
+        <div id="content">
+            <h1 id="about" style="position: relative">Click image to speak</h1>
+            <div class="dog-mic">
+                <div class="slider-wrapper futurico-theme" style="cursor: pointer; position: relative; align: center; overflow: hidden; left: 500px; top: 0p;">
+                <div id="slider" class="nivoSlider">
+                    <img src="/images/dog.jpg" alt="" title="#caption1">
+                    <img src="/images/cat.gif" alt="">
+                    <img src="/images/cow.jpg" alt="" title="#caption3">
+                    <img src="/images/horse.jpg" alt="">
+                </div>
+                <div id="caption1" class="nivo-html-caption">
+                    <strong>Who am I</strong> <span></span> <em></em>
+                </div>
+                <div id="caption3" class="nivo-html-caption">
+                    <strong>Who am I </strong> <span></span> <em></em>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
