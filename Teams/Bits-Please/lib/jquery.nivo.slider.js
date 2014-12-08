@@ -1,3 +1,4 @@
+var currPic = null;
 
 (function($) {
     var NivoSlider = function(element, options){
@@ -56,8 +57,11 @@
         // Get initial image
         if($(kids[vars.currentSlide]).is('img')){
             vars.currentImage = $(kids[vars.currentSlide]);
+            currPic = 1;// vars.currentImage[0].id; 
+            
         } else {
             vars.currentImage = $(kids[vars.currentSlide]).find('img:first');
+            currPic = 1;// vars.currentImage[0].id; 
         }
         
         // Show initial link
@@ -315,8 +319,10 @@
             // Set vars.currentImage
             if($(kids[vars.currentSlide]).is('img')){
                 vars.currentImage = $(kids[vars.currentSlide]);
+                currPic = vars.currentImage[0].id;
             } else {
                 vars.currentImage = $(kids[vars.currentSlide]).find('img:first');
+                currPic = vars.currentImage[0].id;
             }
             
             // Set active links
@@ -607,6 +613,7 @@
             }
         };
         
+        currPic = vars.currentImage[0].id;
         // Trigger the afterLoad callback
         settings.afterLoad.call(this);
         

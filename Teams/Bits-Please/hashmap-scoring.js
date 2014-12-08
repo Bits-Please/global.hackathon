@@ -81,3 +81,8 @@ function HashData(obj)
         this.length = 0;
     }
 }
+
+//var currPic = 20;
+    
+//}
+//NivoSlider.vars.currentImage.id; //@TODO: generate random number here for a random animal
