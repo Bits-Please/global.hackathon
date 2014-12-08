@@ -53,7 +53,7 @@ if(event.results[i][0].transcript == data_Hash.getText(currPic) || event.results
               
                 wrong_score.setText(currPic, wrong_score.getText(currPic) + 1);
                 sweetAlert("Oops!", "That was incorrect", "error");
-                 var msg = new SpeechSynthesisUtterance(data_Hash.getText(myPic));
+                 var msg = new SpeechSynthesisUtterance(data_Hash.getText(currPic));
                 
                  window.speechSynthesis.speak(msg);
               
